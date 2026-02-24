@@ -6,6 +6,7 @@
     <title>assenment 4</title>
      <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <header class="w-[80%] mx-auto mt-5 ">
@@ -26,6 +27,241 @@
 
         </div>
     </header>
-    
+
+       <main class="w-[80%] mx-auto mb-6 mt-5">
+        <div class="md:flex justify-between mb-2 ">
+            <div class="text-black">Available Jobs</div>
+            <div id="job-count">0 jobs</div>
+        </div>
+        <div class="grid-cols-1 space-y-2  md:flex gap-3">
+        <button onclick="toggleStyle('all-filter-btn')" id="all-filter-btn" class="block btn bg-primary text-white px-5 py-2" >All</button>
+        <button onclick="toggleStyle('Interview-filter-btn')" id="Interview-filter-btn" class="block btn px-5 py-2" >Interview</button>
+        <button onclick="toggleStyle('Rejected-filter-btn')" id="Rejected-filter-btn" class="btn px-5 py-2" >Rejected</button>
+   </div>
+
+
+       <section id="filterd-section" class=" hidden w-[90%] mx-auto space-y-6 mt-4">
+             <p class="p">no card</p>
+            
+       </section>
+
+    <section id="allCards" class="w-full mx-auto space-y-6 mt-4">
+        <!-- card 1 -->
+        <div class="flex justify-between p-8 border ">
+            <!-- part 1  -->
+            <div class="space-y-4">
+                <div>
+                    <p class="mobile font-bold">Mobile First Corp </p>
+                    <p class="react">React Native Developer</p>
+                </div>
+                <div class="flex gap-2">
+                    <p class="remote">Remote • $130,000</p>
+                    <p class="fullTime">• Full-time - $175,000</p>
+                 
+                </div>
+                <div>
+                 <p class="change bg-sky-50 w-[30%]" >Not Applied</p>  
+                </div>
+                <div class="flex gap-4">
+                    <button class="Interview-btn btn border-2 border-green-600 text-green-500 px-4 py">Interview</button>
+                    <button class="Rejected-btn btn border-2  border-red-600 px-4 text-red-600">Rejected</button>
+                </div>
+            </div>
+            <!-- part 2 -->
+            <div>
+                <button class="delete "><i class="fa-regular fa-trash-can"></i></button>
+            </div>
+        </div>
+      
+        <!-- card 2 -->
+        <div class="flex justify-between p-8 border">
+            <!-- part 1  -->
+            <div class="space-y-4">
+                <div>
+                    <p class="mobile font-bold">Mobile First Corp 2  </p>
+                    <p class="react">React Native Developer</p>
+                </div>
+                <div class="flex gap-2">
+                    <p class="remote">Remote • $130,000</p>
+                    <p class="fullTime">• Full-time - $175,000</p>
+                   
+                </div>
+                <div>
+                 <p class="change">Not Applied</p>  
+                </div>
+                <div>
+                    <button class="Interview-btn btn border-2 border-green-600 text-green-500 px-4 py">Interview</button>
+                    <button class="Rejected-btn btn border-2  border-red-600 px-4 text-red-600">Rejected</button>
+                </div>
+            </div>
+            <!-- part 2 -->
+            <div>
+                <button class="delete"><i class="fa-regular fa-trash-can"></i></button>
+            </div>
+        </div>
+      
+        <!-- card 3 -->
+        <div class="flex justify-between p-8 border">
+            <!-- part 1  -->
+            <div class="space-y-4">
+                <div>
+                    <p class="mobile font-bold">Mobile First Corp 3 </p>
+                    <p class="react">React Native Developer</p>
+                </div>
+                <div class="flex gap-2">
+                    <p class="remote">Remote • $130,000</p>
+                    <p class="fullTime">• Full-time - $175,000</p>
+                  
+                </div>
+                <div>
+                 <p class="change">Not Applied</p>  
+                </div>
+                <div>
+                    <button class="Interview-btn btn border-2 border-green-600 text-green-500 px-4 py">Interview</button>
+                    <button class="Rejected-btn btn border-2  border-red-600 px-4 text-red-600">Rejected</button>
+                </div>
+            </div>
+            <!-- part 2 -->
+            <div>
+                <button  class="delete "><i class="fa-regular fa-trash-can"></i></button>
+            </div>
+        </div>
+      
+        <!-- card 4 -->
+        <div class="flex justify-between p-8 border">
+            <!-- part 1  -->
+            <div class="space-y-4">
+                <div>
+                    <p class="mobile font-bold">Mobile First Corp 4</p>
+                    <p class="react">React Native Developer</p>
+                </div>
+                <div class="flex gap-2">
+                    <p class="remote">Remote •$130,00</p>
+                    <p class="fullTime">• Full-time $175,000</p>
+                  
+                </div>
+                <div>
+                 <p class="change">Not Applied</p>  
+                </div>
+                <div>
+                    <button class="Interview-btn btn border-2 border-green-600 text-green-500 px-4 py">Interview</button>
+                    <button class="Rejected-btn btn border-2  border-red-600 px-4 text-red-600">Rejected</button>
+                </div>
+            </div>
+            <!-- part 2 -->
+            <div>
+                <button class=""><i class="fa-regular fa-trash-can"></i></button>
+            </div>
+        </div>
+      
+        <!-- card 5 -->
+        <div class="flex justify-between p-8 border">
+            <!-- part 1  -->
+            <div class="space-y-4">
+                <div>
+                    <p class="mobile font-bold">Mobile First Corp </p>
+                    <p class="react">React Native Developer</p>
+                </div>
+                <div class="flex gap-2">
+                    <p class="remote">Remote• $130,000</p>
+                    <p class="fullTime">• Full-time - $175,000</p>
+                 
+                </div>
+                <div>
+                 <p class="change">Not Applied</p>  
+                </div>
+                <div>
+                    <button class="Interview-btn btn border-2 border-green-600 text-green-500 px-4 py">Interview</button>
+                    <button class="Rejected-btn btn border-2  border-red-600 px-4 text-red-600">Rejected</button>
+                </div>
+            </div>
+            <!-- part 2 -->
+            <div>
+                <button class="delete"><i class="fa-regular fa-trash-can"></i></button>
+            </div>
+        </div>
+      
+        <!-- card 6 -->
+        <div class="flex justify-between p-8 border">
+            <!-- part 1  -->
+            <div class="space-y-4">
+                <div>
+                    <p class="mobile font-bold">Mobile First Corp </p>
+                    <p class="react">React Native Developer</p>
+                </div>
+                <div class="flex gap-2">
+                    <p class="remote">Remote • $130,000</p>
+                    <p class="fullTime">• Full-time- $175,000</p>
+                </div>
+                <div>
+                 <p class="change">Not Applied</p>  
+                </div>
+                <div>
+                    <button class="Interview-btn btn border-2 border-green-600 text-green-500 px-4 py">Interview</button>
+                    <button class="Rejected-btn btn border-2  border-red-600 px-4 text-red-600">Rejected</button>
+                </div>
+            </div>
+            <!-- part 2 -->
+            <div>
+                <button class="delete "><i class="fa-regular fa-trash-can"></i></button>
+            </div>
+        </div>
+      
+        <!-- card 7 -->
+        <div class="flex justify-between p-8 border">
+            <!-- part 1  -->
+            <div class="space-y-4">
+                <div>
+                    <p class="mobile font-bold">Mobile First Corp </p>
+                    <p class="react">React Native Developer</p>
+                </div>
+                <div class="flex gap-2">
+                    <p class="remote">Remote • $130,000</p>
+                    <p class="fullTime">• Full-time - $175,000</p>
+                </div>
+                <div>
+                 <p class="change">Not Applied</p>  
+                </div>
+                <div>
+                    <button class="Interview-btn btn border-2 border-green-600 text-green-500 px-4 py">Interview</button>
+                    <button class="Rejected-btn btn border-2  border-red-600 px-4 text-red-600">Rejected</button>
+                </div>
+            </div>
+            <!-- part 2 -->
+            <div>
+                <button class="delete "><i class="fa-regular fa-trash-can"></i></button>
+            </div>
+        </div>
+         <!-- card 8 -->
+        <div class="flex justify-between p-8 border">
+            <!-- part 1  -->
+            <div class="space-y-4">
+                <div>
+                    <p class="mobile font-bold">Mobile First Corp </p>
+                    <p class="react">React Native Developer</p>
+                </div>
+                <div class="flex gap-2">
+                    <p class="remote">Remote • $130,000</p>
+                    <p class="fullTime">• Full-time - $175,000</p>
+                  
+                </div>
+                <div>
+                 <p class="change">Not Applied</p>  
+                </div>
+                <div>
+                    <button class="Interview-btn btn border-2 border-green-600 text-green-500 px-4 py">Interview</button>
+                    <button class="Rejected-btn btn border-2  border-red-600 px-4 text-red-600">Rejected</button>
+                </div>
+            </div>
+            <!-- part 2 -->
+            <div>
+                <button class="delete ">Delete</button>
+            </div>
+        </div>
+      
+      </div>
+    </section>
+</main>
+    <script src="/script.js"></script>
 </body>
 </html>
