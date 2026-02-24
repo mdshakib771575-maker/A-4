@@ -16,14 +16,21 @@ let RejectedFilterBtn = document.getElementById('Rejected-filter-btn');
 const allCards = document.getElementById('allCards');
 const mainContainer = document.querySelector('main')
 const filterSection = document.getElementById('filterd-section');
-const deleteBtn = document.getElementById('.delete');
-for(let del of deleteBtn){
-    del.addEventListener('click',function(e){
-     e.target.parentNode.parentNode.remove( e.target.parentNode.parentNode)
-    })
+const deleteBtn = document.querySelectorAll('.delete');
+// for(let del of deleteBtn){
+//     del.addEventListener('click',function(e){
+//      e.target.parentNode.parentNode.remove( e.target.parentNode.parentNode)
+//     })
         
     
 
+// }
+
+
+for(let dle of deleteBtn ){
+    dle.addEventListener('click',function(e){
+         e.target.parentNode.parentNode.remove( e.target.parentNode.parentNode)
+    })
 }
 
 function calculateCount(){
@@ -56,9 +63,8 @@ function toggleStyle(id){
     currentChange =id;
      if(id == 'Interview-filter-btn'){
             allCards.classList.add('hidden');
-            RenderingInterview()
             filterSection.classList.remove('hidden')
-           
+            RenderingInterview()
             jobCount.innerText =InterList.length  + "/8 "+'jobes'; 
         }
          else if(id =='all-filter-btn'){
@@ -108,6 +114,11 @@ mainContainer.addEventListener('click',function(event){
      if(currentChange == 'Rejected-filter-btn'){
        RenderingRejected()
         // RenderingInterview()
+        for(let dle of deleteBtn ){
+        dle.addEventListener('click',function(e){
+             e.target.parentNode.parentNode.remove( e.target.parentNode.parentNode)
+        })
+    }
     }
     // step 2 fenesh
     calculateCount()
@@ -173,7 +184,7 @@ function RenderingInterview(){
             </div>
             <!-- part 2 -->
             <div>
-               <button class="delete "><i class="fa-regular fa-trash-can"></i></button>
+               <button class="delete btn btn-error">DLETE</button>
             </div>
         `
         filterSection.appendChild(div)
@@ -210,7 +221,7 @@ function RenderingRejected(){
             </div>
             <!-- part 2 -->
             <div>
-               <button class="delete "><i class="fa-regular fa-trash-can"></i></button>
+               <button class="delete btn btn-error">DLETE</button>
             </div>
         `
         filterSection.appendChild(div)
