@@ -1,6 +1,7 @@
 
 let InterList = [];
 let RejectedList = [];
+let currentChange = 'all';
 // step 1
 
 let total = document.getElementById('total');
@@ -15,6 +16,15 @@ let RejectedFilterBtn = document.getElementById('Rejected-filter-btn');
 const allCards = document.getElementById('allCards');
 const mainContainer = document.querySelector('main')
 const filterSection = document.getElementById('filterd-section');
+const deleteBtn = document.getElementById('.delete');
+for(let del of deleteBtn){
+    del.addEventListener('click',function(e){
+     e.target.parentNode.parentNode.remove( e.target.parentNode.parentNode)
+    })
+        
+    
+
+}
 
 function calculateCount(){
     total.innerText = allCards.children.length;
@@ -27,6 +37,9 @@ function calculateCount(){
 calculateCount();
 
 function toggleStyle(id){
+
+   
+    
     allFilterBtn.classList.remove('bg-primary','text-white')
     InterviewFilterBtn.classList.remove('bg-primary','text-white')
     RejectedFilterBtn.classList.remove('bg-primary','text-white')
@@ -40,9 +53,10 @@ function toggleStyle(id){
     selact.classList.remove('bg-gray-300','text-black')
     selact.classList.add('bg-primary','text-white')
     // step 4 filtarig
+    currentChange =id;
      if(id == 'Interview-filter-btn'){
-            currentChange =id;
             allCards.classList.add('hidden');
+            RenderingInterview()
             filterSection.classList.remove('hidden')
            
             jobCount.innerText =InterList.length  + "/8 "+'jobes'; 
@@ -54,9 +68,13 @@ function toggleStyle(id){
           jobCount.innerText = allCards.children.length + " "+'jobes';
 }
  else if(id == 'Rejected-filter-btn'){
-        allCards.classList.add('hidden');
+    if(id == 'Rejected-filter-btn'){
+       allCards.classList.add('hidden');
         filterSection.classList.remove('hidden')
          jobCount.innerText =RejectedList.length  + "/8 "+'jobes';
+         RenderingRejected()
+    } 
+       
 
     }}
 // step 1 fenish
@@ -86,8 +104,12 @@ mainContainer.addEventListener('click',function(event){
     InterList.push(cardInfo)
     
     }
+    RejectedList = RejectedList.filter(item => item.mobile != cardInfo.mobile)
+     if(currentChange == 'Rejected-filter-btn'){
+       RenderingRejected()
+        // RenderingInterview()
+    }
     // step 2 fenesh
-    RenderingInterview()
     calculateCount()
 } 
 else if(event.target.classList.contains('Rejected-btn')){
@@ -113,7 +135,11 @@ else if(event.target.classList.contains('Rejected-btn')){
     RejectedList.push(cardInfo)
     
     }
-    RenderingRejected();
+    InterList = InterList.filter(item => item.mobile != cardInfo.mobile)
+    if(currentChange == 'Interview-filter-btn'){
+        RenderingInterview()
+    }
+    // RenderingRejected();
     calculateCount();
 }
 });
